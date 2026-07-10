@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm - Sweet Cake</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">🍰 Sweet<span>Cake</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+          <li class="nav-item"><a class="nav-link active" href="san-pham.html">Sản phẩm</a></li>
+          <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== TIÊU ĐỀ TRANG ===== -->
+  <section class="hero hero-photo hero-page py-5">
+    <div class="container">
+      <h1>Thực đơn bánh ngọt</h1>
+      <p>Đa dạng các loại bánh cho mọi dịp đặc biệt của bạn</p>
+    </div>
+  </section>
+
+  <!-- ===== BỘ LỌC SẢN PHẨM ===== -->
+  <section class="container py-5">
+    <div class="text-center mb-4">
+      <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')">Tất cả</button>
+      <button class="filter-btn" data-filter="cake" onclick="filterProducts('cake')">Bánh kem</button>
+      <button class="filter-btn" data-filter="cupcake" onclick="filterProducts('cupcake')">Cupcake</button>
+      <button class="filter-btn" data-filter="pastry" onclick="filterProducts('pastry')">Bánh mặn</button>
+      <button class="filter-btn" data-filter="cookie" onclick="filterProducts('cookie')">Bánh quy</button>
+      <button class="filter-btn" data-filter="muffin" onclick="filterProducts('muffin')">Muffin</button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cake">
+        <a class="product-link" href="chi-tiet.html?id=kem-dau-tay">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/banhkemdau.jpg" alt="Bánh kem dâu tây">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh kem</span>
+              <h5 class="mt-2">Bánh kem dâu tây</h5>
+              <p class="product-price">195.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cake">
+        <a class="product-link" href="chi-tiet.html?id=kem-chocolate">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/banhkemchoco.jpg" alt="Bánh kem chocolate">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh kem</span>
+              <h5 class="mt-2">Bánh kem chocolate</h5>
+              <p class="product-price">210.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cupcake">
+        <a class="product-link" href="chi-tiet.html?id=cupcake-socola">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cupcakechoco.jpg" alt="Cupcake socola">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Cupcake</span>
+              <h5 class="mt-2">Cupcake socola</h5>
+              <p class="product-price">25.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cupcake">
+        <a class="product-link" href="chi-tiet.html?id=cupcake-vani-dau">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cupcakevanidau.jpg" alt="Cupcake vani dâu">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Cupcake</span>
+              <h5 class="mt-2">Cupcake vani dâu</h5>
+              <p class="product-price">25.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="pastry">
+        <a class="product-link" href="chi-tiet.html?id=croissant-bo-phap">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/croissantbophap.jpg" alt="Croissant bơ Pháp">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh mặn</span>
+              <h5 class="mt-2">Croissant bơ Pháp</h5>
+              <p class="product-price">28.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="pastry">
+        <a class="product-link" href="chi-tiet.html?id=bagel-pho-mai">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/bagelphomai.jpg" alt="Bagel phô mai">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh mặn</span>
+              <h5 class="mt-2">Bagel phô mai</h5>
+              <p class="product-price">30.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cookie">
+        <a class="product-link" href="chi-tiet.html?id=cookie-socola-chip">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cookisocolachip.jpg" alt="Cooki socola chip">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh quy</span>
+              <h5 class="mt-2">Cookie socola chip</h5>
+              <p class="product-price">15.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cookie">
+        <a class="product-link" href="chi-tiet.html?id=donut-phu-duong">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/donutphuduong.jpg" alt="Donut phủ đường">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh quy</span>
+              <h5 class="mt-2">Donut phủ đường</h5>
+              <p class="product-price">20.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cake">
+        <a class="product-link" href="chi-tiet.html?id=kem-red-velvet">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/banhkemredvelvet.jpg" alt="Bánh kem Red Velvet">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh kem</span>
+              <h5 class="mt-2">Bánh kem Red Velvet</h5>
+              <p class="product-price">220.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cake">
+        <a class="product-link" href="chi-tiet.html?id=kem-vani-trai-cay">
+          <div class="product-card">
+           <div class="product-thumb">
+              <img src="../assets/images/banhkemvanitraicay.jpg" alt="Bánh kem vani trái cây">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh kem</span>
+              <h5 class="mt-2">Bánh kem vani trái cây</h5>
+              <p class="product-price">200.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cupcake">
+        <a class="product-link" href="chi-tiet.html?id=cupcake-matcha">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cupcaketraxanh.jpg" alt="Cupcake trà xanh">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Cupcake</span>
+              <h5 class="mt-2">Cupcake trà xanh</h5>
+              <p class="product-price">27.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cupcake">
+        <a class="product-link" href="chi-tiet.html?id=cupcake-caramel">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cupcakecaramelmuoi.jpg" alt="Cupcake caramel muối">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Cupcake</span>
+              <h5 class="mt-2">Cupcake caramel muối</h5>
+              <p class="product-price">27.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="pastry">
+        <a class="product-link" href="chi-tiet.html?id=tart-trung">
+          <div class="product-card">
+           <div class="product-thumb">
+            <img src="../assets/images/tarttrung.jpg" alt="Tart trứng">
+          </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh mặn</span>
+              <h5 class="mt-2">Tart trứng</h5>
+              <p class="product-price">22.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="pastry">
+        <a class="product-link" href="chi-tiet.html?id=pate-so">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/pateso.jpg" alt="Bánh Pate Sô">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh mặn</span>
+              <h5 class="mt-2">Bánh Pate Sô</h5>
+              <p class="product-price">25.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="cookie">
+        <a class="product-link" href="chi-tiet.html?id=cookie-yen-mach">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/cookiyenmachnhokho.jpg" alt="Cookie yến mạch nho khô">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Bánh quy</span>
+              <h5 class="mt-2">Cookie yến mạch nho khô</h5>
+              <p class="product-price">16.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="muffin">
+        <a class="product-link" href="chi-tiet.html?id=muffin-viet-quat">
+          <div class="product-card">
+           <div class="product-thumb">
+              <img src="../assets/images/muffinvietquoc.jpg" alt="Muffin việt quất">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Muffin</span>
+              <h5 class="mt-2">Muffin việt quất</h5>
+              <p class="product-price">26.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="muffin">
+        <a class="product-link" href="chi-tiet.html?id=muffin-chocolate-chip">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/muffinchocolachip.jpg" alt="Muffin chocolate chip">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Muffin</span>
+              <h5 class="mt-2">Muffin chocolate chip</h5>
+              <p class="product-price">26.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="muffin">
+        <a class="product-link" href="chi-tiet.html?id=muffin-vani">
+          <div class="product-card">
+           <div class="product-thumb">
+            <img src="../assets/images/muffinvani.jpg" alt="Muffin vani">
+          </div>
+            <div class="product-body">
+              <span class="badge-cake">Muffin</span>
+              <h5 class="mt-2">Muffin vani</h5>
+              <p class="product-price">24.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 product-item" data-category="muffin">
+        <a class="product-link" href="chi-tiet.html?id=muffin-pho-mai-bap">
+          <div class="product-card">
+            <div class="product-thumb">
+              <img src="../assets/images/muffinphomaibap.jpg" alt="Muffin phô mai bắp">
+            </div>
+            <div class="product-body">
+              <span class="badge-cake">Muffin</span>
+              <h5 class="mt-2">Muffin phô mai bắp</h5>
+              <p class="product-price">25.000₫</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>🍰 SweetCake</h5>
+          <p>Tiệm bánh ngọt thủ công - Ngọt ngào từng khoảnh khắc.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Liên kết</h5>
+          <p><a href="../index.html">Trang chủ</a></p>
+          <p><a href="gioi-thieu.html">Giới thiệu</a></p>
+          <p><a href="san-pham.html">Sản phẩm</a></p>
+          <p><a href="lien-he.html">Liên hệ</a></p>
+        </div>
+        <div class="col-md-4">
+          <h5>Liên hệ</h5>
+          <p>260 Điện Biên Phủ, Trà Vinh</p>
+          <p>0397165414</p>
+          <p>tm360504@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="currentYear"></span> Sweet Cake. Đồ án môn học Thiết kế Web - Trường Kỹ thuật và Công nghệ, Đại học Trà Vinh.
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js?v=3"></script>
+</body>
+</html>
