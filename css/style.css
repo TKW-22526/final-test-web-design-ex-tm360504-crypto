@@ -1,8 +1,3 @@
-/* =========================================================
-   SWEET CAKE — CSS cho website tiệm bánh ngọt
-   Tông màu chủ đạo: hồng pastel (#ff6f91, #ffe1ec, #fff5f8)
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
 
 :root {
@@ -12,7 +7,7 @@
   --pink-bg: #fff5f8;
   --cream: #fff9f5;
   --text-dark: #4a2c33;
-  --shadow: 0 8px 24px rgba(217, 79, 116, 0.15);
+  --border-light: 1px solid #f5cddb;
 }
 
 * {
@@ -40,7 +35,7 @@ a {
 /* ---------- Header & Navigation ---------- */
 .navbar {
   background-color: #ffffff !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-bottom: var(--border-light);
   padding: 0.8rem 1.5rem;
 }
 
@@ -49,6 +44,16 @@ a {
   font-weight: 700;
   font-size: 1.6rem;
   color: var(--pink-dark) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .navbar-brand span {
@@ -108,7 +113,6 @@ a {
 .hero-photo h1,
 .hero-photo p {
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .hero-photo .btn-outline-pink {
@@ -122,11 +126,11 @@ a {
 }
 
 .hero-home {
-  background-image: url('../img/hero-tiem-banh.jpg');
+  background-image: url('../assets/tiembanh.jpg');
 }
 
 .hero-page {
-  background-image: url('../img/hero-collage-banh.jpeg');
+  background-image: url('../assets/hero-collage-banh.jpeg');
 }
 
 .btn-pink {
@@ -136,13 +140,12 @@ a {
   padding: 0.7rem 2rem;
   border-radius: 30px;
   font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .btn-pink:hover {
   background-color: var(--pink-dark);
   color: #fff;
-  transform: translateY(-2px);
 }
 
 .btn-outline-pink {
@@ -185,16 +188,16 @@ a {
 /* ---------- Product cards ---------- */
 .product-card {
   background-color: #ffffff;
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: var(--border-light);
+  transition: transform 0.2s ease, border-color 0.2s ease;
   height: 100%;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(217, 79, 116, 0.25);
+  border-color: var(--pink-primary);
 }
 
 .product-link {
@@ -204,11 +207,29 @@ a {
 }
 
 .product-thumb {
-  height: 180px;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-thumb img {
+  transform: scale(1.06);
+}
+
+/* Ô hình cho bánh CHƯA có ảnh thật -> hiện icon emoji thay thế */
+.product-thumb.emoji-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   background: linear-gradient(135deg, var(--pink-light), #ffffff);
 }
 
@@ -249,12 +270,44 @@ a {
   color: #fff;
 }
 
-/* ---------- About page ---------- */
+/* ---------- About / Giới thiệu ---------- */
 .about-story {
   background-color: #ffffff;
-  border-radius: 18px;
+  border-radius: 16px;
+  border: var(--border-light);
   padding: 2.5rem;
-  box-shadow: var(--shadow);
+}
+
+.about-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: var(--border-light);
+}
+
+.feature-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.feature-item {
+  background-color: #ffffff;
+  border: var(--border-light);
+  border-radius: 30px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.feature-item span {
+  font-size: 1.2rem;
 }
 
 .value-icon {
@@ -262,16 +315,29 @@ a {
   margin-bottom: 0.8rem;
 }
 
+.value-photo {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.value-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ---------- Contact page ---------- */
 .contact-info-box {
   background-color: var(--pink-light);
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 2rem;
 }
 
 .form-control:focus {
   border-color: var(--pink-primary);
-  box-shadow: 0 0 0 0.2rem rgba(255, 111, 145, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(255, 111, 145, 0.2);
 }
 
 #formMessage {
@@ -318,13 +384,23 @@ a {
 /* ---------- Product detail page ---------- */
 .detail-thumb {
   height: 340px;
-  border-radius: 22px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: var(--border-light);
+}
+
+.detail-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-thumb.emoji-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 8rem;
   background: linear-gradient(135deg, var(--pink-light), #ffffff);
-  box-shadow: var(--shadow);
 }
 
 .detail-info h1 {
@@ -451,7 +527,6 @@ footer a:hover {
   width: 46px;
   height: 46px;
   font-size: 1.2rem;
-  box-shadow: var(--shadow);
   z-index: 999;
 }
 
@@ -465,45 +540,8 @@ footer a:hover {
   }
   .detail-thumb {
     height: 220px;
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
   }
-}
-.product-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:20px 20px 0 0;
-}
-.product-card{
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
-.product-card:hover{
-    transform:translateY(-8px);
-}
-
-.product-thumb{
-    width:100%;
-    height:220px;
-    overflow:hidden;
-}
-
-.product-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:.4s;
-}
-
-.product-card:hover .product-thumb img{
-    transform:scale(1.08);
-}
-
-.product-body{
-    padding:18px;
+  .detail-thumb.emoji-thumb {
+    font-size: 5rem;
+  }
 }
